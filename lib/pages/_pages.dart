@@ -1,0 +1,15 @@
+export 'package:todo/pages/settings/back_up_page.dart';
+export 'package:todo/pages/categories/category_detail_page.dart';
+export 'package:todo/pages/task/task_completed_page.dart';
+export 'package:todo/pages/task/task_edit_page.dart';
+export 'package:todo/pages/task/tasks_deleted_page.dart';
+export 'package:todo/pages/search/search_page.dart';
+export 'package:todo/pages/task/task_detail_page.dart';
+export 'package:todo/pages/categories/category_new_page.dart';
+export 'package:todo/pages/categories/categories_list_page.dart';
+export 'package:todo/pages/task/task_new_page.dart';
+export 'package:todo/pages/statistics/statistics_page.dart';
+export 'package:todo/pages/home/home_page.dart';
+export 'package:todo/pages/calendar/calendar_page.dart';
+export 'package:todo/pages/settings/settings_page.dart';
+export 'package:todo/pages/main/main_page.dart';
