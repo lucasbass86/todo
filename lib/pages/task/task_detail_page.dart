@@ -7,6 +7,7 @@ import 'package:todo/themes/themes.dart';
 import 'package:todo/utils/enums.dart';
 import 'package:todo/utils/extensions.dart';
 import 'package:todo/utils/utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TaskDetailPage extends StatelessWidget {
   static const String routeName = 'TaskDetailPage';
@@ -22,7 +23,10 @@ class TaskDetailPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.primary,
       appBar: AppBar(
-        title: GestureDetector(onTap: () => Navigator.pop(context), child: Text('')),
+        title: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Text(task.isExpired ? 'Tarea caducada' : ''),
+        ),
         centerTitle: false,
         actions: [
           IconButton(
@@ -80,7 +84,7 @@ class TaskDetailPage extends StatelessWidget {
                       spacing: 20,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        SelectableText(
                           task.title,
                           style: TextStyle(
                             color: AppTheme.surface,
@@ -139,7 +143,7 @@ class TaskDetailPage extends StatelessWidget {
                           spacing: 20,
                           children: [
                             Icon(Icons.calendar_month, size: iconSize),
-                            Text(Utils.dateEnglishToSpanish(task.date), style: textStyle),
+                            Text(Utils.actualDate(task.date), style: textStyle),
                           ],
                         ),
                       ),
@@ -170,7 +174,17 @@ class TaskDetailPage extends StatelessWidget {
                       spacing: 20,
                       children: [
                         Icon(Icons.description_outlined, size: iconSize),
-                        Expanded(child: Text(task.description, style: textStyle)),
+                        Expanded(
+                          child: SelectableText(
+                            onTap: () async {
+                              if (Uri.parse(task.description).isAbsolute) {
+                                await launchUrl(Uri.parse(task.description));
+                              }
+                            },
+                            task.description,
+                            style: textStyle,
+                          ),
+                        ),
                       ],
                     ),
                   Expanded(child: 1.h),

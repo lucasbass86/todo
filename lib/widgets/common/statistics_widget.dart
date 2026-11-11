@@ -20,7 +20,7 @@ class StatisticsWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         decoration: BoxDecoration(
-          color: selected ? AppTheme.secondary : AppTheme.indicator,
+          color: selected ? AppTheme.primary : AppTheme.indicator,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(

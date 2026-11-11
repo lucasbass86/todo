@@ -128,7 +128,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
                 xValueMapper: (item, _) => item.label,
                 yValueMapper: (item, _) => item.value,
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
-                color: AppTheme.secondary,
+                color: AppTheme.primary,
                 name: 'Completadas',
               ),
             ],

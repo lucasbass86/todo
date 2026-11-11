@@ -15,22 +15,27 @@ class Utils {
     Color(0xFFEC4899),
     Color(0xFF64748B),
     Colors.teal,
+    Color(0xFF6F4E37),
+    Color.fromARGB(255, 103, 103, 103),
+    Color.fromARGB(255, 102, 0, 51),
   ];
 
   // Iconos de categorías
   static final List<IconData> categoryIcons = [
-    Icons.work_outline, // Trabajo
-    Icons.person_outline, // Personal
-    Icons.school_outlined, // Estudios
-    Icons.favorite_border, // Salud
-    Icons.shopping_cart_outlined, // Compras
-    Icons.home_outlined, // Hogar
-    Icons.fitness_center, // Deporte
-    Icons.account_balance_wallet_outlined, // Finanzas
-    Icons.event_outlined, // Eventos
-    Icons.folder_outlined, // Otros
+    Icons.work_outline,
+    Icons.person_outline,
+    Icons.school_outlined,
+    Icons.favorite_border,
+    Icons.shopping_cart_outlined,
+    Icons.home_outlined,
+    Icons.fitness_center,
+    Icons.account_balance_wallet_outlined,
+    Icons.event_outlined,
+    Icons.folder_outlined,
     Icons.local_hospital_rounded,
     Icons.rocket_launch,
+    Icons.coffee,
+    Icons.content_paste_rounded,
   ];
 
   //UUID

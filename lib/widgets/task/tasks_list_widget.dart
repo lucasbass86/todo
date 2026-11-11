@@ -38,6 +38,7 @@ class TasksListWidget extends StatelessWidget {
   }
 
   Widget _items(List<Task> tasks) {
+    tasks.sort((a, b) => b.date.compareTo(a.date));
     return ListView.separated(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
@@ -57,7 +58,8 @@ class TasksListWidget extends StatelessWidget {
       separatorBuilder: (BuildContext context, int index) => 10.h,
       itemBuilder: (BuildContext context, int index) {
         final TaskCategory category = taskProvider.categories.firstWhere((c) => c.id == ids[index]);
-        final List<Task> tasksOfCategory = tasks.where((t) => t.idCategory == category.id).toList();
+        final List<Task> tasksOfCategory = tasks.where((t) => t.idCategory == category.id).toList()
+          ..sort((a, b) => b.date.compareTo(a.date));
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

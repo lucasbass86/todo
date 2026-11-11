@@ -46,9 +46,10 @@ class _CalendarPageState extends State<CalendarPage> {
                 todayDecoration: BoxDecoration(color: AppTheme.border, shape: BoxShape.circle),
                 markerDecoration: BoxDecoration(color: AppTheme.primary, shape: BoxShape.circle),
                 selectedDecoration: BoxDecoration(
-                  color: AppTheme.secondary,
                   shape: BoxShape.circle,
+                  border: Border.all(color: AppTheme.primary),
                 ),
+                selectedTextStyle: TextStyle(color: AppTheme.primary),
               ),
               selectedDayPredicate: (day) {
                 return isSameDay(_selectedDay, day);

@@ -42,6 +42,9 @@ class Task {
   });
 
   bool get isCompleted => status == TaskStatus.completed;
+  bool get isExpired =>
+      Utils.normalizeDate(DateTime.now()).isAfter(Utils.normalizeDate(date)) &&
+      status == TaskStatus.pending;
 
   Task copyWith({
     String? title,

@@ -25,6 +25,7 @@ class TaskWidget extends StatelessWidget {
           child: Container(
             height: 80,
             decoration: BoxDecoration(
+              color: task.isExpired ? AppTheme.primary.withAlpha(120) : Colors.transparent,
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: AppTheme.border),
             ),
@@ -58,6 +59,8 @@ class TaskWidget extends StatelessWidget {
                       Text(
                         '${Utils.actualDate(task.date)} - ${Utils.timeOfDayToString(task.time)}',
                       ),
+                      if (task.isExpired)
+                        Text('Tarea caducada', style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),

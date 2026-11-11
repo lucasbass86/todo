@@ -64,10 +64,16 @@ class _CategoryNewPageState extends State<CategoryNewPage> {
                 itemBuilder: (BuildContext context, int index) {
                   bool selected = Utils.categoryIcons[index] == icon;
                   return GestureDetector(
-                    onTap: () => setState(() {
-                      icon = Utils.categoryIcons[index];
-                    }),
-                    child: Icon(Utils.categoryIcons[index], size: selected ? 50 : 30),
+                    onTap: () => setState(() => icon = Utils.categoryIcons[index]),
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      width: selected ? 60 : 30,
+                      height: selected ? 60 : 30,
+                      child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Icon(Utils.categoryIcons[index]),
+                      ),
+                    ),
                   );
                 },
               ),
@@ -85,13 +91,11 @@ class _CategoryNewPageState extends State<CategoryNewPage> {
                 itemBuilder: (BuildContext context, int index) {
                   bool selected = Utils.categoryColors[index] == color;
                   return GestureDetector(
-                    onTap: () => setState(() {
-                      color = Utils.categoryColors[index];
-                    }),
+                    onTap: () => setState(() => color = Utils.categoryColors[index]),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 400),
-                      width: selected ? 50 : 35,
-                      height: selected ? 50 : 35,
+                      duration: const Duration(milliseconds: 300),
+                      width: selected ? 70 : 35,
+                      height: selected ? 70 : 35,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Utils.categoryColors[index],
